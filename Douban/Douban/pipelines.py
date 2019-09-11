@@ -7,5 +7,11 @@
 
 
 class DoubanPipeline(object):
+    def open_spider(self, spider):
+        self.file = open('douban.json', 'w')
+
     def process_item(self, item, spider):
         return item
+
+    def close_spider(self, spider):
+        self.file.close()
